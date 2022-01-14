@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/actor/:id", controller: "actors", action: "actor_method"
+
+  get "/movie/:id", controller: "movies", action: "movie_method"
 end
