@@ -1,13 +1,11 @@
 class MoviesController < ApplicationController
-  def actor_method
-    actor_id = params[:id].to_i
-    actor = Actor.find_by(id: actor_id)
-    render json: actor
+  def movie_method
+    movie = Movie.all
+    render json: movie
   end
 
-  def movie_method
-    movie_id = params[:id].to_i
-    movie = Movie.find_by(id: movie_id)
+  def movie_method2
+    movie = Movie.find(params[:id].to_i)
     render json: movie
   end
 end
