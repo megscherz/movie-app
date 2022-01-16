@@ -1,6 +1,8 @@
-GET http://localhost:3000/movie/2
+POST http://localhost:3000/actor/5 
+Content-Type: application/json
 
-###
+{
+  "id": 6
+}
 
-GET http://localhost:3000/actor
 
