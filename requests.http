@@ -1,8 +1,63 @@
-POST http://localhost:3000/actor/5 
+### movie index
+GET http://localhost:3000/movie
+
+### movie create
+
+POST http://localhost:3000/movie
 Content-Type: application/json
 
 {
-  "id": 6
+  "title": "Sandlot",
+  "year": 1993,
+  "plot": "A group of boys learn life lessons while playing baseball on a rundown field."
 }
 
+### movie show
+
+GET http://localhost:3000/movie/2
+
+### movie update
+
+PATCH http://localhost:3000/movie/2
+Content-Type: application/json
+
+{
+  "plot": "A man without friends needs a bestman for his wedding. He meets this strange man meet and become friends. Things are learned and in the end they are best friends."
+}
+
+### movie delete
+
+DELETE http://localhost:3000/movie/6
+
+### actor index
+
+GET http://localhost:3000/actor
+
+### actor create 
+
+POST http://localhost:3000/actor 
+Content-Type: application/json
+
+{
+  "first_name": "Jason",
+  "last_name": "Sudeikis",
+  "known_for": "Ted Lasso",
+}
+
+### actor show
+
+GET http://localhost:3000/actor/5
+
+### actor update
+
+PATCH http://localhost:3000/actor/5
+Content-Type: application/json
+
+{
+  "known_for": "Silver Linings Playbook"
+}
+
+### actor delete 
+
+DELETE http://localhost:3000/actor/3 
 
