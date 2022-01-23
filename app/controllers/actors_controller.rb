@@ -1,65 +1,47 @@
 class ActorsController < ApplicationController
-  # def query
-  #   actor_id = params[:id]
-  #   actor = Actor.find_by(id: actor_id)
-  #   render json: actor
-  # end
-
-  # def url_method
-  #   actor_id = params[:id].to_i
-  #   actor = Actor.find_by(id: actor_id)
-  #   render json: actor
-  # end
-
-  # def body_method
-  #   actor_id = params[:id].to_i
-  #   actor = Actor.find_by(id: actor_id)
-  #   render json: actor
-  # end
-
   def index
-    actor = Actor.all
-    render json: actor
+    actors = Actor.all.order(age: :desc)
+    render json: actors
   end
 
   def create
-    actor = Actor.create(
+    actors = Actor.create(
       first_name: params[:first_name],
       last_name: params[:last_name],
       known_for: params[:known_for],
       gender: params[:gender],
       age: params[:age],
     )
-    if actor.save
-      render json: actor
+    if actors.save
+      render json: actors
     else
-      render json: { errors: actor.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: actors.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def show
-    actor = Actor.find(params[:id])
-    render json: actor
+    actors = Actor.find(params[:id])
+    render json: actors
   end
 
   def update
-    actor = Actor.find(params[:id])
-    actor.first_name = params[:first_name] || actor.first_name
-    actor.last_name = params[:last_name] || actor.last_name
-    actor.known_for = params[:known_for] || actor.known_for
-    actor.gender = params[:gender] || actor.gender
-    actor.age = params[:age] || actor.age
-    actor.save
-    if actor.save
-      render json: actor
+    actors = Actor.find(params[:id])
+    actors.first_name = params[:first_name] || actors.first_name
+    actors.last_name = params[:last_name] || actors.last_name
+    actors.known_for = params[:known_for] || actors.known_for
+    actors.gender = params[:gender] || actors.gender
+    actors.age = params[:age] || actors.age
+    actors.save
+    if actors.save
+      render json: actors
     else
-      render json: { errors: actor.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: actors.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def destroy
-    actor = Actor.find(params[:id])
-    actor.destroy
+    actors = Actor.find(params[:id])
+    actors.destroy
     render json: { message: "Your actor has been desimated." }
   end
 end
