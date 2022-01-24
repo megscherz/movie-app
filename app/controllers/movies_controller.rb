@@ -5,43 +5,43 @@ class MoviesController < ApplicationController
   end
 
   def create
-    movies = Movie.create(
+    movie = Movie.create(
       title: params[:title],
       year: params[:year],
       plot: params[:plot],
       director: params[:director],
       english: params[:english],
     )
-    if movies.save
+    if movie.save
       render json: movie
     else
-      render json: { errors: movies.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: movie.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def show
-    movies = Movie.find(params[:id])
-    render json: movies
+    movie = Movie.find(params[:id])
+    render json: movie
   end
 
   def update
-    movies = Movie.find(params[:id])
-    movies.title = params[:title] || movies.title
-    movies.year = params[:year] || movies.year
-    movies.plot = params[:plot] || movies.plot
-    movies.director = params[:director] || movies.director
-    movies.english = params[:english] || movies.english
-    movies.save
-    if movies.save
-      render json: movies
+    movie = Movie.find(params[:id])
+    movie.title = params[:title] || movie.title
+    movie.year = params[:year] || movie.year
+    movie.plot = params[:plot] || movie.plot
+    movie.director = params[:director] || movie.director
+    movie.english = params[:english] || movie.english
+    movie.save
+    if movie.save
+      render json: movie
     else
-      render json: { errors: movies.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: movie.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def destroy
-    movies = Movie.find(params[:id])
-    movies.destroy
+    movie = Movie.find(params[:id])
+    movie.destroy
     render json: { message: "Your movie has been desimated." }
   end
 end

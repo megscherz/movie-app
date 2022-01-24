@@ -18,11 +18,13 @@ GET http://localhost:3000/movie/2
 
 ### movie update
 
-PATCH http://localhost:3000/movie/2
+PATCH http://localhost:3000/actors/12
 Content-Type: application/json
 
 {
-  "plot": "A man without friends needs a bestman for his wedding. He meets this strange man meet and become friends. Things are learned and in the end they are best friends."
+  "age": 48,
+  "gender": "female",
+  "movie_id": 7
 }
 
 ### movie delete
@@ -31,11 +33,11 @@ DELETE http://localhost:3000/movie/6
 
 ### actor index
 
-GET http://localhost:3000/actor
+GET http://localhost:3000/actors
 
 ### actor create 
 
-POST http://localhost:3000/actor 
+POST http://localhost:3000/actors
 Content-Type: application/json
 
 {
@@ -46,18 +48,20 @@ Content-Type: application/json
 
 ### actor show
 
-GET http://localhost:3000/actor/5
+GET http://localhost:3000/actors/5
 
 ### actor update
 
-PATCH http://localhost:3000/actor/5
+PATCH http://localhost:3000/actors/12
 Content-Type: application/json
 
 {
-  "known_for": "Silver Linings Playbook"
+  "age": 48,
+  "gender": "female",
+  "movie_id": 7,
 }
 
 ### actor delete 
 
-DELETE http://localhost:3000/actor/3 
+DELETE http://localhost:3000/actors/8
 

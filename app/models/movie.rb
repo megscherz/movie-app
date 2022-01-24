@@ -3,4 +3,6 @@ class Movie < ApplicationRecord
   validates :year, numericality: { only_integer: true }
   validates :plot, presence: true, length: { in: 10..500 }
   validates :english, presence: true
+
+  has_many :actors
 end
