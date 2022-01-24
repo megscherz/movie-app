@@ -1,9 +1,9 @@
 ### movie index
-GET http://localhost:3000/movie
+GET http://localhost:3000/movies
 
 ### movie create
 
-POST http://localhost:3000/movie
+POST http://localhost:3000/movies
 Content-Type: application/json
 
 {
@@ -14,11 +14,11 @@ Content-Type: application/json
 
 ### movie show
 
-GET http://localhost:3000/movie/2
+GET http://localhost:3000/movies/2
 
 ### movie update
 
-PATCH http://localhost:3000/actors/12
+PATCH http://localhost:3000/movies/2
 Content-Type: application/json
 
 {
@@ -29,7 +29,7 @@ Content-Type: application/json
 
 ### movie delete
 
-DELETE http://localhost:3000/movie/6
+DELETE http://localhost:3000/movies/11
 
 ### actor index
 
@@ -48,7 +48,7 @@ Content-Type: application/json
 
 ### actor show
 
-GET http://localhost:3000/actors/5
+GET http://localhost:3000/actors/14
 
 ### actor update
 
