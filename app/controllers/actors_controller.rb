@@ -1,4 +1,6 @@
 class ActorsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     actors = Actor.all.order(age: :desc)
     render json: actors
@@ -16,7 +18,7 @@ class ActorsController < ApplicationController
     if actor.save
       render json: actor
     else
-      render json: { errors: actors.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: actor.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -27,11 +29,11 @@ class ActorsController < ApplicationController
 
   def update
     actor = Actor.find(params[:id])
-    actor.first_name = params[:first_name] || actor.first_name,
-                       actor.last_name = params[:last_name] || actor.last_name,
-                       actor.known_for = params[:known_for] || actor.known_for,
-                       actor.gender = params[:gender] || actor.gender,
-                       actor.age = params[:age] || actor.age,
+    actor.first_name = params[:first_name] || actor.first_name
+    actor.last_name = params[:last_name] || actor.last_name
+    actor.known_for = params[:known_for] || actor.known_for
+    actor.gender = params[:gender] || actor.gender
+    actor.age = params[:age] || actor.age
     actor.movie_id = params[:movie_id] || actor.movie_id
     actor.save
     if actor.save

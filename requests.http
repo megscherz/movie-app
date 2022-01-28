@@ -39,11 +39,14 @@ GET http://localhost:3000/actors
 
 POST http://localhost:3000/actors
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDM0MDg2NjF9.wBM6GUprPOcU-X6cp4DVQcBCATV-ngPArb-0Nxu4GCw
 
 {
   "first_name": "Jason",
   "last_name": "Sudeikis",
   "known_for": "Ted Lasso",
+  "age": 50,
+  "movie_id": 3
 }
 
 ### actor show
@@ -65,3 +68,25 @@ Content-Type: application/json
 
 DELETE http://localhost:3000/actors/8
 
+### Users create (signup)
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Isabel the dog",
+  "email": "isabel@thedog.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Sessions create (login)
+
+POST http://localhost:3000/sessions
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDM0MDg2NjF9.wBM6GUprPOcU-X6cp4DVQcBCATV-ngPArb-0Nxu4GCw
+
+{
+  "email": "meghan@scherzer.com",
+  "password": "password"
+}
