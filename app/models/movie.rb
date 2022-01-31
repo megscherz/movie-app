@@ -5,4 +5,5 @@ class Movie < ApplicationRecord
   validates :english, presence: true
 
   has_many :actors
+  has_many :genres, through: :movie_genre
 end

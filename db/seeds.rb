@@ -20,3 +20,40 @@
 #   { title: "Harry Potter and the Sorcerer's Stone", year: 2001, plot: "A young boy finds out that he's a wizard and can go to the best wizarding school in the country. The movie captures his first year at school and Harry learning all about himself and his family's past.", director: "Chris Columbus", english: true },
 #   { title: "I Love You, Man", year: 2009, plot: "A man without friends needs a bestman for his wedding. He meets this strange man meet and become friends. Things are learned and in the end they are best friends.", director: "John Hamburg", english: true },
 # ])
+
+# Genre.create(
+#   { name: "comedy" }
+# )
+
+# Genre.create(
+#   { name: "thriller" }
+# )
+
+# Genre.create(
+#   { name: "fantasy" },
+# )
+
+MovieGenre.create(
+  { movie_id: 1,
+    genre_id: 1 }
+)
+
+MovieGenre.create(
+  { movie_id: 2,
+    genre_id: 1 }
+)
+
+MovieGenre.create(
+  { movie_id: 3,
+    genre_id: 1 }
+)
+
+MovieGenre.create(
+  { movie_id: 4,
+    genre_id: 2 }
+)
+
+MovieGenre.create(
+  { movie_id: 5,
+    genre_id: 3 }
+)
