@@ -90,3 +90,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDM0MDg2N
   "email": "meghan@scherzer.com",
   "password": "password"
 }
+
+### Movie genre create
+
+POST http://localhost:3000/movie_genres
+Content-Type: application/json
+
+{
+  "movie_id": 5,
+  "genre_id": 2
+}
