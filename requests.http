@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDQ5NjYxOTZ9.h6haQmBtHLEY_FTdyB7XAwN-CMgoexmZ8y4QqM_T4RQ
+
 ### movie index
 GET http://localhost:3000/movies
 
@@ -39,7 +41,7 @@ GET http://localhost:3000/actors
 
 POST http://localhost:3000/actors
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDM0MDg2NjF9.wBM6GUprPOcU-X6cp4DVQcBCATV-ngPArb-0Nxu4GCw
+Authorization: Bearer {{ jwt }}
 
 {
   "first_name": "Jason",
@@ -47,6 +49,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDM0MDg2N
   "known_for": "Ted Lasso",
   "age": 50,
   "movie_id": 3
+
 }
 
 ### actor show
@@ -84,7 +87,7 @@ Content-Type: application/json
 
 POST http://localhost:3000/sessions
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDM0MDg2NjF9.wBM6GUprPOcU-X6cp4DVQcBCATV-ngPArb-0Nxu4GCw
+Authorization: Bearer {{ jwt }}
 
 {
   "email": "meghan@scherzer.com",
