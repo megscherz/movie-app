@@ -7,6 +7,8 @@ GET http://localhost:3000/movies
 
 POST http://localhost:3000/movies
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
 
 {
   "title": "Sandlot",
@@ -22,6 +24,8 @@ GET http://localhost:3000/movies/2
 
 PATCH http://localhost:3000/movies/2
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
 
 {
   "age": 48,
@@ -60,6 +64,8 @@ GET http://localhost:3000/actors/14
 
 PATCH http://localhost:3000/actors/12
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
 
 {
   "age": 48,
@@ -98,6 +104,8 @@ Authorization: Bearer {{ jwt }}
 
 POST http://localhost:3000/movie_genres
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
 
 {
   "movie_id": 5,
